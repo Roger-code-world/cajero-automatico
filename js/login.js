@@ -14,7 +14,7 @@ btn.addEventListener("click", (e) => {
     users.forEach(element => {
         if(element.username == username.value && element.password == password.value){
             count++;
-            location.href = "../cuenta/index.html";
+            location.href = "../cuenta/cuenta.html";
         }
     });
     if(count == 0){
