@@ -1,2 +1,2 @@
-Usuario: admin
-Contraseña: 12345
+- [Usuario:] admin
+- [Contraseña:] 12345
