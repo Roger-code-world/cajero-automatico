@@ -1,4 +1,9 @@
-
+/*******************LOGIN************************ */
+const username = document.querySelector("#username");
+const password = document.querySelector("#password");
+const btn = document.querySelector("#buttton-login");
+/******************************************* */
+const sectionLogin = document.querySelector("#section-login");
 const sectionAuth = document.querySelector('#section-auth');
 const sectionAccount = document.querySelector('#section-account');
 const sectionOptions = document.querySelector('#section-options');
@@ -9,13 +14,45 @@ const btnLogout= document.querySelector('#btn-logout');
 const btnWithdraw = document.querySelector('#btn-withdraw');
 const btnConsult = document.querySelector('#btn-consult');
 const listName = document.querySelector(".accounts")
+
+const passwordCount = document.querySelector("#passwordCount");
+const title = document.querySelector("#title");
+
 let getId = 0;
 let accountName = "";
+
+let users = [
+    {id:1, username:"admin", password:"12345"},
+];
 let accounts = [
     {id:1, nombre:'Mali', saldo:200, password:"mail"},
     {id:2, nombre:'Gera', saldo:290, password:"gera"},
     {id:3, nombre:'Maui', saldo:67 , password:"maui"},
 ];
+
+/************************************************************** */
+btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if(username.value == "" || password.value == ""){
+        alert("Error: Los campos estan vaciones");
+        return false;
+    }
+    let = count = 0;
+    users.forEach(element => {
+        if(element.username == username.value && element.password == password.value){
+            count++;
+            //location.href = "../cuenta/index.html";
+            sectionLogin.style.display = "none";
+            sectionAccount.style.display = "block";
+            title.innerHTML = "";
+            title.innerHTML += "Seleccionar una cuenta";
+        }
+    });
+    if(count == 0){
+        alert("Error: Las credenciales son incorrectas.");
+    }
+});
+/************************************************************** */
 
 listName.innerHTML = '';
 accounts.forEach(element => {
@@ -40,7 +77,7 @@ btnName.forEach(element => {
 });
 
 btnAuth.addEventListener("click", (e) => {
-    const pass = document.getElementById("password");
+    const pass = document.getElementById("passwordCount");
     console.log(getId);
     console.log(pass);
     let countAuth = 0;
@@ -52,6 +89,10 @@ btnAuth.addEventListener("click", (e) => {
             sectionAccount.style.display = "none";
             sectionAuth.style.display = "none";
             accountName = element.nombre;
+            title.innerHTML = "";
+            title.innerHTML += `
+                <p>Bienvenido: ${accountName}</p>
+            `;
             content.innerHTML = ``;
             content.innerHTML += `
                 <p>Bienvenido: ${accountName}</p>
@@ -120,5 +161,17 @@ btnWithdraw.addEventListener("click", (e) => {
 });
 
 btnLogout.addEventListener("click", (e) => {
-    location.href ="../index.html";
+    sectionLogin.style.display = "block";
+    sectionOptions.style.display = "none";
+
+    //const showCant = document.querySelector('#show-cant');
+    //showCant.value = "";
+    passwordCount.value = "";
+    username.value = "";
+    password.value = "";
+
+    getId = 0;
+    accountName = "";
+    title.innerHTML = "";
+    title.innerHTML += "Iniciar sesion";
 });

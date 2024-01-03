@@ -3,39 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="css/login.css">
+    <title>Cuentas</title>
+    <link rel="stylesheet" href="css/accounts.css">
 </head>
 <body>
     <header>
-        <h1>Iniciar sesion</h1>
+        <!--h1>Seleccionar una cuenta</h1>-->
+        <h1 id="title">Iniciar sesion</h1>
     </header>
     <main>
         <section id="section-login">
             <div class="container">
                 <div class="login-container">
-
-                <div class="col">
-                    <label for="">Usuario</label>
-                    <input type="text" name="username" id="username">
-                </div>
-                <div class="col">
-                    <label for="">contraseña</label>
-                    <input type="password" name="password" id="password">
-                </div>
-                <div class="col">
-                    <div class="button">
-                        <button id="buttton-login">Aceptar</button>
+                    <div class="col">
+                        <label for="">Usuario</label>
+                        <input type="text" class="input-login" name="username" id="username">
                     </div>
-                </div>
+                    <div class="col">
+                        <label for="">contraseña</label>
+                        <input type="password" class="input-login" name="password" id="password">
+                    </div>
+                    <div class="col">
+                        <div class="button">
+                            <button id="buttton-login">Aceptar</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+        <section id="section-account">
+            <div class="accounts">
 
+            </div>
+        </section>
+        <section id="section-auth">
+            <div class="auth">
+                <div class="auth-container">
+                    <div class="login">Autenticación</div>
+                    <div class="login-item">
+                        <div class="col-auth">
+                            <label for="">Ingresar la contraseña</label>
+                            <input id="passwordCount" type="password">
+                        </div>
+                        <div class="col-auth">
+                            <button id="btn-auth">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section-options">
+            <div class="options">
+            <div class="option-button1">
+                <div class="col-option1">
+                    <button id="btn-consult">
+                    <p>Consultar saldo</p>
+                    </button>
+                </div>
+                <div class="col-option1">
+                    <button id="btn-add">
+                    <p>Ingresar monto</p>
+                    </button>
+                </div>
+            </div>
+            <div id="options-container">
+                <div class="content">
+                </div>
+            </div>
+            <div class="option-button2">
+                <div class="col-option2">
+                    <button id="btn-withdraw">
+                    <p>Retirar monto</p>
+                    </button>
+                </div>
+                <div class="col-option2">
+                    <button id="btn-logout">
+                    <p>Salir</p>
+                    </button>
+                </div>
+            </div>
+            </div>
+        </section>
     </main>
     <footer>
-
+        <p>Desarrollado por rogercode</p>
     </footer>
-    <script src="./js/login.js"></script>
+    <script src="js/accounts.js"></script>
 </body>
 </html>
